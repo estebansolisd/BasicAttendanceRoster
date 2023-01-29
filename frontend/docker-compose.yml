@@ -1,0 +1,18 @@
+# For more information: https://laravel.com/docs/sail
+version: '3'
+services:
+    frontend:
+        build: 
+            context: .
+            dockerfile: Dockerfile
+        ports:
+            - "8080:8080"
+        volumes:
+            - .:/app
+        networks:
+            - bridge-network
+networks:
+    bridge-network:
+        driver: bridge
+
+   
