@@ -22,7 +22,6 @@ services:
             - '.:/var/www/html'
         networks:
             - sail
-            - frontend_bridge-network
         depends_on:
             - mysql
     mysql:
@@ -48,8 +47,8 @@ services:
 networks:
     sail:
         driver: bridge
-    frontend_bridge-network:
-        external: true
+    external:
+        name: external-network
 volumes:
     sail-mysql:
         driver: local
